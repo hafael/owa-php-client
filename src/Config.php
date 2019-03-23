@@ -74,13 +74,14 @@ class Config implements ConfigInterface
         $this->setVersion($version);
         $this->setBaseUrl($baseUrl);
         $this->setFormat($format ?: 'json');
+        $this->setApiKey($apiKey);
+        $this->setSiteId($siteId);
 
         if (! $this->apiKey || ! $this->siteId) {
             throw new \RuntimeException('The Open Web Analytics API key or Site ID is not defined!');
         }
         
-        $this->setApiKey($apiKey);
-        $this->setSiteId($siteId);
+        
     }
 
     /**
