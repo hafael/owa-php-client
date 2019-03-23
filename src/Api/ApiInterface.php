@@ -10,7 +10,7 @@
  * bundled with this package in the LICENSE file.
  *
  * @package    Open Web Analytics PHP REST Client
- * @version    0.1.1
+ * @version    0.1.2
  * @author     VerdeIT
  * @license    BSD License (3-clause)
  * @copyright  (c) 2019-2019, VerdeIT
