@@ -107,15 +107,15 @@ abstract class Api implements ApiInterface
      */
     public function getParsedConstraints()
     {
-        $constraint = '';
+        $parsed = '';
         $len = count($this->constraints);
         foreach($this->constraints as $key => $constraint) {
-            $constraint .= $constraint['name'].urlencode($constraint['operator']).$constraint['expression'];
+            $parsed .= $constraint['name'] . urlencode($constraint['operator']) . $constraint['expression'];
             if($key != $len - 1) {
-                $constraint .= ',';
+                $parsed .= ',';
             }
         }
-        return $constraint;
+        return $parsed;
     }
 
     /**
@@ -123,7 +123,7 @@ abstract class Api implements ApiInterface
      */
     public function setConstraint($name, $operator, $expression)
     {
-        $this->constraints->push([
+        array_push($this->constraints, [
             'name' => $name,
             'operator' => $operator,
             'expression' => $expression
@@ -197,7 +197,7 @@ abstract class Api implements ApiInterface
     /**
      * {@inheritdoc}
      */
-    public function setSort($sort)
+    public function setSort($sort = null)
     {
         $this->sort = $sort;
 
